@@ -23,14 +23,14 @@ This is a [kickstart](https://github.com/Keats/kickstart) template for modern Re
 Create a new project using this template:
 
 ```bash
-kickstart https://github.com/burstMembrane/vite-ts-shadcn-tailwind my-project-name
+kickstart https://github.com/burstMembrane/vite-ts-shadcn-tailwind -p my-project-name
 cd my-project-name
 ```
 
 Or if running locally:
 
 ```bash
-kickstart /path/to/this/template my-project-name
+kickstart /path/to/this/template -o my-project-name
 cd my-project-name
 ```
 
