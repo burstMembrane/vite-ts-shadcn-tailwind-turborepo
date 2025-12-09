@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { Button } from "@repo/ui/button";
+import { Button } from "@repo/ui/components/button";
 import { userSchema } from "@repo/lib/schemas";
 
 /**
@@ -67,9 +67,7 @@ export function ZodExample() {
             className="w-full rounded-md border px-3 py-2"
             placeholder="john_doe"
           />
-          {errors.username && (
-            <p className="text-sm text-red-600">{errors.username}</p>
-          )}
+          {errors.username && <p className="text-sm text-red-600">{errors.username}</p>}
         </div>
 
         <div className="space-y-2">
@@ -87,9 +85,7 @@ export function ZodExample() {
             className="w-full rounded-md border px-3 py-2"
             placeholder="user@example.com"
           />
-          {errors.email && (
-            <p className="text-sm text-red-600">{errors.email}</p>
-          )}
+          {errors.email && <p className="text-sm text-red-600">{errors.email}</p>}
         </div>
 
         <Button type="submit" className="w-full">

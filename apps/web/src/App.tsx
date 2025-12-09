@@ -1,11 +1,10 @@
-import React from "react";
-import { Button } from "@repo/ui/button";
+import { Button } from "@repo/ui/components/button";
 import { ZodExample } from "./components/ZodExample";
 
 function App() {
   return (
-    <div className="w-full h-screen flex flex-col justify-center items-center gap-4 bg-background text-foreground">
-      <h1 className="text-2xl font-bold animate-pulse">
+    <div className="bg-background text-foreground flex h-screen w-full flex-col items-center justify-center gap-4">
+      <h1 className="animate-pulse text-2xl font-bold">
         Vite + React + TailwindCSS + TypeScript + Shadcn
       </h1>
       <Button variant="outline">Hello World</Button>

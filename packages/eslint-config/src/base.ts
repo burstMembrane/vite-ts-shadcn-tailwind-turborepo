@@ -3,17 +3,12 @@ import { defineConfig } from "eslint/config";
 import tseslint from "typescript-eslint";
 import importPlugin from "eslint-plugin-import";
 import unicornPlugin from "eslint-plugin-unicorn";
+import prettierConfig from "eslint-config-prettier";
 
 export const baseConfig = defineConfig(
   // Global ignores must be in their own config object
   {
-    ignores: [
-      "**/node_modules/**",
-      "**/dist/**",
-      "**/.turbo/**",
-      "**/.next/**",
-      "**/build/**",
-    ],
+    ignores: ["**/node_modules/**", "**/dist/**", "**/.turbo/**", "**/.next/**", "**/build/**"],
   },
   js.configs.recommended,
   ...tseslint.configs.recommended,
@@ -26,10 +21,7 @@ export const baseConfig = defineConfig(
       // TypeScript strict rules
       "@typescript-eslint/no-unused-vars": "error",
       "@typescript-eslint/no-explicit-any": "error",
-      "@typescript-eslint/consistent-type-imports": [
-        "error",
-        { fixStyle: "inline-type-imports" },
-      ],
+      "@typescript-eslint/consistent-type-imports": ["error", { fixStyle: "inline-type-imports" }],
 
       // Import rules
       "import/first": "error",
@@ -61,4 +53,6 @@ export const baseConfig = defineConfig(
       "import/no-default-export": "off",
     },
   },
+  // Disable ESLint rules that conflict with Prettier (must be last)
+  prettierConfig
 );

@@ -18,8 +18,9 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@repo/ui": path.resolve(__dirname, "../../packages/ui"),
-      "@repo/lib": path.resolve(__dirname, "../../packages/lib"),
+      "@repo/ui/styles": path.resolve(__dirname, "../../packages/ui/src/styles/globals.css"),
+      "@repo/ui": path.resolve(__dirname, "../../packages/ui/src"),
+      "@repo/lib": path.resolve(__dirname, "../../packages/lib/src"),
     },
   },
   base: "./",
