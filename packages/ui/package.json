@@ -5,8 +5,8 @@
   "type": "module",
   "exports": {
     "./button": {
-      "types": "./button.tsx",
-      "default": "./button.tsx"
+      "types": "./src/button.tsx",
+      "default": "./src/button.tsx"
     },
     "./styles": "./index.css"
   },

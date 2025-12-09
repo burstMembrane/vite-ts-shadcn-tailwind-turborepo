@@ -5,6 +5,16 @@ import importPlugin from "eslint-plugin-import";
 import unicornPlugin from "eslint-plugin-unicorn";
 
 export const baseConfig = defineConfig(
+  // Global ignores must be in their own config object
+  {
+    ignores: [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/.turbo/**",
+      "**/.next/**",
+      "**/build/**",
+    ],
+  },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
@@ -43,13 +53,6 @@ export const baseConfig = defineConfig(
       // Disabled rules
       "@typescript-eslint/no-namespace": "off",
     },
-    ignores: [
-      "**/node_modules/**",
-      "**/dist/**",
-      "**/.turbo/**",
-      "**/.next/**",
-      "**/build/**",
-    ],
   },
   // Allow default exports in config files
   {

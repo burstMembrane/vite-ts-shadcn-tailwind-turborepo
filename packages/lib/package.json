@@ -5,12 +5,12 @@
   "type": "module",
   "exports": {
     "./utils": {
-      "types": "./utils.ts",
-      "default": "./utils.ts"
+      "types": "./src/utils.ts",
+      "default": "./src/utils.ts"
     },
     "./schemas": {
-      "types": "./schemas.ts",
-      "default": "./schemas.ts"
+      "types": "./src/schemas.ts",
+      "default": "./src/schemas.ts"
     }
   },
   "scripts": {

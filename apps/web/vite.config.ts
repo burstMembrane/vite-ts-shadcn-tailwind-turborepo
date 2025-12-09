@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import reactCompiler from "babel-plugin-react-compiler";
 import tailwindcss from "@tailwindcss/vite";
+import path from "path";
 
 const IS_DEVELOPMENT = process.env.NODE_ENV === "development";
 // https://vite.dev/config/
@@ -15,6 +16,12 @@ export default defineConfig({
     }),
     tailwindcss(),
   ],
+  resolve: {
+    alias: {
+      "@repo/ui": path.resolve(__dirname, "../../packages/ui"),
+      "@repo/lib": path.resolve(__dirname, "../../packages/lib"),
+    },
+  },
   base: "./",
   // if in development mode, enable sourcemaps and disable minification
   build: {
