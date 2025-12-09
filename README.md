@@ -103,8 +103,8 @@ Browse available components at [ui.shadcn.com](https://ui.shadcn.com).
 The `@/` alias is configured to point to `./src`:
 
 ```typescript
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 ```
 
 ### React Compiler

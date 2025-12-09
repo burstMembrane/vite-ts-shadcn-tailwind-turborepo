@@ -10,6 +10,7 @@
     "type-check": "turbo type-check"
   },
   "devDependencies": {
+    "prettier": "3.7.4",
     "turbo": "^2.3.3"
   }
 }

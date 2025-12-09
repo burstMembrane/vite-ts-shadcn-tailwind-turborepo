@@ -16,7 +16,10 @@ export const baseConfig = defineConfig(
       // TypeScript strict rules
       "@typescript-eslint/no-unused-vars": "error",
       "@typescript-eslint/no-explicit-any": "error",
-      "@typescript-eslint/consistent-type-imports": ["error", { fixStyle: "inline-type-imports" }],
+      "@typescript-eslint/consistent-type-imports": [
+        "error",
+        { fixStyle: "inline-type-imports" },
+      ],
 
       // Import rules
       "import/first": "error",
@@ -32,7 +35,10 @@ export const baseConfig = defineConfig(
       "no-empty": ["error", { allowEmptyCatch: true }],
 
       // Unicorn rules
-      "unicorn/filename-case": ["error", { cases: { camelCase: true, pascalCase: true, kebabCase: true } }],
+      "unicorn/filename-case": [
+        "error",
+        { cases: { camelCase: true, pascalCase: true, kebabCase: true } },
+      ],
 
       // Disabled rules
       "@typescript-eslint/no-namespace": "off",
@@ -51,5 +57,5 @@ export const baseConfig = defineConfig(
     rules: {
       "import/no-default-export": "off",
     },
-  }
+  },
 );

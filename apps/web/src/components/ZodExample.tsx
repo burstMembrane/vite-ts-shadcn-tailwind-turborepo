@@ -1,7 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { Button } from "@repo/ui/button";
-import React from "react";
-import { userSchema} from '@repo/lib/schemas';
+import { userSchema } from "@repo/lib/schemas";
 
 /**
  * Zod validation example using the User schema
@@ -17,7 +16,6 @@ export function ZodExample() {
     setSuccess(false);
     setErrors({});
 
-    // Create user data with generated id and default createdAt
     const userData = {
       id: crypto.randomUUID(),
       email,
@@ -69,7 +67,9 @@ export function ZodExample() {
             className="w-full rounded-md border px-3 py-2"
             placeholder="john_doe"
           />
-          {errors.username && <p className="text-sm text-red-600">{errors.username}</p>}
+          {errors.username && (
+            <p className="text-sm text-red-600">{errors.username}</p>
+          )}
         </div>
 
         <div className="space-y-2">
@@ -87,7 +87,9 @@ export function ZodExample() {
             className="w-full rounded-md border px-3 py-2"
             placeholder="user@example.com"
           />
-          {errors.email && <p className="text-sm text-red-600">{errors.email}</p>}
+          {errors.email && (
+            <p className="text-sm text-red-600">{errors.email}</p>
+          )}
         </div>
 
         <Button type="submit" className="w-full">

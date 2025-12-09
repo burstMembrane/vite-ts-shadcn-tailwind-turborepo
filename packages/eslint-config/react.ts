@@ -30,5 +30,5 @@ export const reactConfig = defineConfig(
       // Allow default exports in React files (for components and config files)
       "import/no-default-export": "off",
     },
-  }
+  },
 );
