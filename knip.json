@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/knip@5/schema.json",
-  "ignore": ["turbo/generators/**"],
+  "ignore": ["turbo/generators/**", "packages/ui/src/styles/globals.css"],
   "workspaces": {
     "apps/web": {
       "ignoreDependencies": ["@tailwindcss/vite", "lucide-react", "tailwindcss"]
@@ -12,7 +12,8 @@
         "class-variance-authority",
         "clsx",
         "tailwind-merge",
-        "tw-animate-css"
+        "tw-animate-css",
+        "@radix-ui/react-dropdown-menu"
       ]
     }
   }
