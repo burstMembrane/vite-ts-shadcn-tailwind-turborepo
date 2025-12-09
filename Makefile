@@ -12,3 +12,6 @@ test:
 	pnpm test
 type-check:
 	pnpm type-check
+
+add-package:
+ 	turbo gen package
