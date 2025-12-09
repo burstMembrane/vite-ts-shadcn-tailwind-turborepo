@@ -37,6 +37,7 @@ export function ZodExample() {
     } else {
       setSuccess(true);
       console.log("Validated user:", result.data);
+
       setEmail("");
       setUsername("");
     }
