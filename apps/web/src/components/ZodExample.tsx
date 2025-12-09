@@ -6,10 +6,10 @@ import { userSchema } from "@repo/lib/schemas";
  * Zod validation example using the User schema
  */
 export function ZodExample() {
-  const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState<string>("");
+  const [username, setUsername] = useState<string>("");
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [success, setSuccess] = useState(false);
+  const [success, setSuccess] = useState<boolean>(false);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
