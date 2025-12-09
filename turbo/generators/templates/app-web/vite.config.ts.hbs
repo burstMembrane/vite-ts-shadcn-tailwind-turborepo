@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import reactCompiler from "babel-plugin-react-compiler";
+import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 
 const IS_DEVELOPMENT = process.env.NODE_ENV === "development";
@@ -13,13 +14,13 @@ export default defineConfig({
         plugins: [reactCompiler],
       },
     }),
+    tailwindcss(),
   ],
   resolve: {
     alias: {
-      "@repo/ui/styles": path.resolve(__dirname, "../../packages/ui/dist/styles.css"),
+      "@repo/ui/styles": path.resolve(__dirname, "../../packages/ui/src/styles/globals.css"),
       "@repo/ui": path.resolve(__dirname, "../../packages/ui/src"),
       "@repo/lib": path.resolve(__dirname, "../../packages/lib/src"),
-
       "@repo/shared": path.resolve(__dirname, "../../packages/shared/src"),
     },
   },

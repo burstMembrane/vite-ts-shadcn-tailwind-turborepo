@@ -1,0 +1,15 @@
+import { Button } from "@repo/ui/components/button";
+
+export function App() {
+  return (
+    <div className="bg-background text-foreground flex h-screen w-full flex-col items-center justify-center gap-4">
+      <h1 className="animate-pulse text-2xl font-bold">
+        Welcome to {{ appName }}
+      </h1>
+      <p className="text-muted-foreground">
+        Vite + React 19 + TailwindCSS v4 + TypeScript + Shadcn
+      </p>
+      <Button variant="outline">Get Started</Button>
+    </div>
+  );
+}

@@ -68,7 +68,7 @@ pnpm --filter @repo/ui build
 pnpm lint
 
 # Type check all packages
-pnpm type-check
+pnpm typecheck
 
 # Format code
 pnpm format
@@ -199,8 +199,8 @@ Turborepo orchestrates tasks with intelligent caching and parallelization:
       "persistent": true
     },
     "lint": {},
-    "type-check": {
-      "dependsOn": ["^type-check"]
+    "typecheck": {
+      "dependsOn": ["^typecheck"]
     }
   }
 }
@@ -246,10 +246,7 @@ Shared configuration in `@repo/eslint-config`:
 import baseConfig from "@repo/eslint-config/base";
 import reactConfig from "@repo/eslint-config/react";
 
-export default [
-  ...baseConfig,
-  ...reactConfig,
-];
+export default [...baseConfig, ...reactConfig];
 ```
 
 **Enforced Rules:**
@@ -308,7 +305,7 @@ pnpm build
 pnpm lint
 
 # Type check all packages
-pnpm type-check
+pnpm typecheck
 
 # Format all code
 pnpm format
@@ -329,7 +326,7 @@ pnpm --filter web dev
 pnpm --filter @repo/ui build
 
 # Type check only lib package
-pnpm --filter @repo/lib type-check
+pnpm --filter @repo/lib typecheck
 
 # Add dependency to web app
 pnpm --filter web add zod
@@ -370,17 +367,17 @@ pnpm build --ui
 
 ## Technology Versions
 
-| Technology | Version | Purpose |
-|-----------|---------|---------|
-| Node.js | 24.11.1+ | Runtime |
-| pnpm | 10.22.0 | Package manager |
-| Turborepo | 2.3.3 | Build orchestration |
-| TypeScript | 5.7.2 | Type safety |
-| React | 19.2.0 | UI framework |
-| Vite | 7.2.4 | Build tool |
-| Tailwind CSS | 4.1.17 | Styling |
-| ESLint | 9.18.0 | Linting |
-| Prettier | 3.7.4 | Formatting |
+| Technology   | Version  | Purpose             |
+| ------------ | -------- | ------------------- |
+| Node.js      | 24.11.1+ | Runtime             |
+| pnpm         | 10.22.0  | Package manager     |
+| Turborepo    | 2.3.3    | Build orchestration |
+| TypeScript   | 5.7.2    | Type safety         |
+| React        | 19.2.0   | UI framework        |
+| Vite         | 7.2.4    | Build tool          |
+| Tailwind CSS | 4.1.17   | Styling             |
+| ESLint       | 9.18.0   | Linting             |
+| Prettier     | 3.7.4    | Formatting          |
 
 ## What's Included
 

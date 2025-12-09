@@ -5,5 +5,5 @@ pnpm exec lint-staged
 # Lint workspace (via Turbo pipeline)
 pnpm lint --output-logs=none
 
-# Type-check workspace (via Turbo pipeline)
-pnpm type-check --output-logs=none
+# typecheck workspace (via Turbo pipeline)
+pnpm typecheck --output-logs=none

@@ -161,9 +161,63 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
 
 Next steps:
   1. Run 'pnpm install' to link the new package
-  2. Run 'pnpm type-check' to verify TypeScript configuration
+  2. Run 'pnpm typecheck' to verify TypeScript configuration
   3. Run 'pnpm lint' to verify ESLint configuration
   4. Import from your new package: import { ... } from "@repo/{{ packageName }}/..."
+`,
+      });
+
+      return actions;
+    },
+  });
+
+  plop.setGenerator("app", {
+    description: "Create a new Vite + React app in the monorepo",
+    prompts: [
+      {
+        type: "input",
+        name: "appName",
+        message: "App name:",
+        validate: (input: string) => {
+          if (!input) return "App name is required";
+          if (!/^[a-z0-9-]+$/.test(input)) {
+            return "App name must be lowercase alphanumeric with hyphens only";
+          }
+          // Check if app already exists
+          const appPath = path.join(process.cwd(), "apps", input);
+          if (fs.existsSync(appPath)) {
+            return `App "${input}" already exists at ${appPath}`;
+          }
+          return true;
+        },
+      },
+    ],
+    actions: (answers) => {
+      const actions: PlopTypes.ActionType[] = [];
+
+      if (!answers) return actions;
+
+      // 1. Create app files from templates
+      actions.push({
+        type: "addMany",
+        destination: "apps/{{ appName }}",
+        base: "templates/app-web",
+        templateFiles: "templates/app-web/**/*",
+        stripExtensions: ["hbs"],
+      });
+
+      // 2. Final message
+      actions.push({
+        type: "message",
+        data: `
+✅ App {{ appName }} created successfully!
+
+Next steps:
+  1. Run 'pnpm install' to install dependencies
+  2. Run 'pnpm --filter {{ appName }} dev' to start the dev server
+  3. Run 'pnpm typecheck' to verify TypeScript configuration
+  4. Run 'pnpm lint' to verify ESLint configuration
+  5. Open apps/{{ appName }}/src/App.tsx to start building your app
 `,
       });
 
