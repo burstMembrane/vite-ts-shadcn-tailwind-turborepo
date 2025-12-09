@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # Type-check entire workspace
-pnpm type-check
+pnpm type-check --output-logs=none
 
 # Check for unused dependencies and exports
 pnpm knip
