@@ -1,8 +1,7 @@
 #!/usr/bin/env sh
 
 # Format staged files with Prettier
-pnpm exec lint-staged --output-logs=none
-
+pnpm exec lint-staged
 # Lint workspace (via Turbo pipeline)
 pnpm lint --output-logs=none
 
