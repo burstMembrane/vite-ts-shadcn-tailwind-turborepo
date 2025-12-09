@@ -14,11 +14,7 @@
     "knip": "knip --production"
   },
   "lint-staged": {
-    "*.{ts,tsx,js,jsx}": [
-      "prettier --write",
-      "eslint --fix --max-warnings 0"
-    ],
-    "*.{json,md,mdx,css,html,yml,yaml}": [
+    "*.{ts,tsx,js,jsx,json,md,mdx,css,html,yml,yaml}": [
       "prettier --write"
     ]
   },

@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+# Format staged files with Prettier
+pnpm exec lint-staged
+
+# Lint workspace (via Turbo pipeline)
+pnpm lint
+
+# Type-check workspace (via Turbo pipeline)
+pnpm type-check
