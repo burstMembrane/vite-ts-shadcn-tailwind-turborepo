@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+# Type-check entire workspace
+pnpm type-check
+
+# Check for unused dependencies and exports
+pnpm knip
+
+# Build shared packages
+pnpm build --filter @repo/lib
+pnpm build --filter @repo/ui
