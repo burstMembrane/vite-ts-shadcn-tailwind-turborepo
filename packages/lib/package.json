@@ -1,0 +1,31 @@
+{
+  "name": "@repo/lib",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./utils": {
+      "types": "./utils.ts",
+      "default": "./utils.ts"
+    },
+    "./schemas": {
+      "types": "./schemas.ts",
+      "default": "./schemas.ts"
+    }
+  },
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "lint": "eslint . --max-warnings 0"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.4.0",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "eslint": "^9.18.0",
+    "typescript": "^5.7.2"
+  }
+}

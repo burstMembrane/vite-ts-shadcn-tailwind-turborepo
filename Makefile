@@ -1,8 +1,8 @@
 install:
-	bun install
+	pnpm install
 dev:
-	bun run dev
+	pnpm dev
 build:
-	bun run build
+	pnpm build
 preview:
-	bun run preview
+	pnpm preview

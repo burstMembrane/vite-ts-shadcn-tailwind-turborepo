@@ -1,6 +1,6 @@
 
-/// <reference types="react" />
-/// <reference types="react-dom" />
+import 'react'
+import 'react-dom'
 
 declare namespace NodeJS {
   interface Process{
@@ -20,7 +20,7 @@ declare namespace NodeJS {
   }
 }
 
-declare var process: NodeJS.Process
+declare const process: NodeJS.Process
 
 declare module '*.gif' {
   const src: string
@@ -48,7 +48,7 @@ declare module '*.webp' {
 }
 
 declare module '*.svg' {
-  import * as React from 'react'
+import type * as React from 'react'
 
   export const ReactComponent: React.FunctionComponent<React.SVGProps<
     SVGSVGElement

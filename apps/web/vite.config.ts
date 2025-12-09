@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import path from 'path'
 import reactCompiler from 'babel-plugin-react-compiler'
 import tailwindcss from '@tailwindcss/vite'
 
@@ -17,11 +16,6 @@ export default defineConfig({
     tailwindcss(),
   ],
   base: "./",
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
-  },
   // if in development mode, enable sourcemaps and disable minification
   build: {
     minify: !IS_DEVELOPMENT,
