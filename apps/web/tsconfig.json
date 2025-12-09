@@ -1,23 +1,11 @@
 {
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "target": "ESNext",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "types": [],
-    "allowJs": false,
-    "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
-    "paths": {
-      "@repo/ui/*": ["../../packages/ui/*"],
-      "@repo/lib/*": ["../../packages/lib/*"]
-    }
+    "jsx": "react-jsx"
   },
   "include": ["src"]
 }

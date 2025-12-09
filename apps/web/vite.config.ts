@@ -21,6 +21,8 @@ export default defineConfig({
       "@repo/ui/styles": path.resolve(__dirname, "../../packages/ui/src/styles/globals.css"),
       "@repo/ui": path.resolve(__dirname, "../../packages/ui/src"),
       "@repo/lib": path.resolve(__dirname, "../../packages/lib/src"),
+
+      "@repo/shared": path.resolve(__dirname, "../../packages/shared/src"),
     },
   },
   base: "./",
