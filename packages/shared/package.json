@@ -14,10 +14,11 @@
     }
   },
   "scripts": {
-    "build": "tsdown",
+    "build": "pnpm run generate:barrels && tsdown",
     "dev": "tsdown --watch",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint . --max-warnings 0"
+    "lint": "eslint . --max-warnings 0",
+    "generate:barrels": "barrelsby --config .barrelsby.json"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",

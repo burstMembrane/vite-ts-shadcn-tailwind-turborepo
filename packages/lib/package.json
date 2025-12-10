@@ -4,16 +4,21 @@
   "private": true,
   "type": "module",
   "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
     "./*": {
       "types": "./dist/*.d.ts",
       "default": "./dist/*.js"
     }
   },
   "scripts": {
-    "build": "tsdown",
+    "build": "pnpm run generate:barrels && tsdown",
     "dev": "tsdown --watch",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint . --max-warnings 0"
+    "lint": "eslint . --max-warnings 0",
+    "generate:barrels": "barrelsby --config .barrelsby.json"
   },
   "dependencies": {
     "clsx": "^2.1.1",

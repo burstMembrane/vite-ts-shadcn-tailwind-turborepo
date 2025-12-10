@@ -12,7 +12,8 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,mdx,css,html,yml,yaml}\"",
     "prepare": "husky",
     "knip": "knip --production",
-    "sync-prompts": "./scripts/sync-coding-tools.ts"
+    "sync-prompts": "./scripts/sync-coding-tools.ts",
+    "generate:barrels": "pnpm -r --filter '@repo/ui' --filter '@repo/lib' --filter '@repo/shared' exec barrelsby --config .barrelsby.json"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,json,md,mdx,css,html,yml,yaml}": [
@@ -23,6 +24,7 @@
     "@commitlint/cli": "^20.2.0",
     "@commitlint/config-conventional": "^20.2.0",
     "@turbo/gen": "^2.6.3",
+    "barrelsby": "^2.8.1",
     "eslint-config-prettier": "^9.1.2",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",

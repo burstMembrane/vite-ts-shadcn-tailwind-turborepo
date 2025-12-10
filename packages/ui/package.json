@@ -24,10 +24,12 @@
   },
   "scripts": {
     "dev": "pnpm run build:css --watch",
-    "build": "tsdown && pnpm run build:css",
+    "build": "pnpm run generate:barrels && tsdown && pnpm run build:css",
     "build:css": "postcss ./src/styles/globals.css -o ./dist/styles.css --verbose",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint . --max-warnings 0"
+    "lint": "eslint . --max-warnings 0",
+    "generate:barrels": "barrelsby --config .barrelsby.json",
+    "postshadcn": "tsx ./scripts/postshadcn.ts"
   },
   "peerDependencies": {
     "react": "^19.2.0"
@@ -50,10 +52,13 @@
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",
     "eslint": "^9.18.0",
+    "jscodeshift": "^17.3.0",
     "postcss-cli": "^11.0.1",
     "postcss-load-config": "^6.0.1",
     "tailwindcss": "^4.1.11",
+    "ts-morph": "^27.0.2",
     "tsdown": "0.17.2",
+    "tsx": "^4.21.0",
     "typescript": "^5.7.2"
   }
 }

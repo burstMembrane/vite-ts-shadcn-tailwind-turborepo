@@ -8,6 +8,7 @@ export const reactConfig = defineConfig(
   ...baseConfig,
   pluginReact.configs.flat.recommended,
   pluginJsxA11y.flatConfigs.recommended,
+
   {
     languageOptions: {
       globals: {

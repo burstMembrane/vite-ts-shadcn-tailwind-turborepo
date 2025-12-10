@@ -14,6 +14,7 @@ export const baseConfig = defineConfig(
       "**/.turbo/**",
       "**/.next/**",
       "**/build/**",
+      "**/scripts/**",
       "**/*.config.{js,ts,mjs,mts,cjs,cts}",
       "**/eslint.config.{js,ts,mjs,mts,cjs,cts}",
     ],

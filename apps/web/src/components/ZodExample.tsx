@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { Button } from "@repo/ui";
-import { userSchema } from "@repo/lib/schemas";
+import { userSchema } from "@repo/lib";
 
 /**
  * Zod validation example using the User schema

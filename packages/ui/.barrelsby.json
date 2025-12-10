@@ -1,0 +1,7 @@
+{
+  "directory": "./src",
+  "delete": true,
+  "exclude": ["src/index.ts", "styles"],
+  "singleQuotes": false,
+  "location": "all"
+}
