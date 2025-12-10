@@ -21,3 +21,9 @@ typecheck:
 
 add-package:
 	turbo gen package
+
+pre-commit:
+	.husky/pre-commit
+
+pre-push:
+	.husky/pre-push

@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/knip@5/schema.json",
-  "ignore": ["turbo/generators/**", "packages/ui/src/styles/globals.css", "./scripts/"],
+  "ignore": ["turbo/generators/**", "packages/ui/src/styles/globals.css", "scripts/*"],
   "workspaces": {
     "apps/web": {
       "ignoreDependencies": ["@tailwindcss/vite", "lucide-react", "tailwindcss"]
