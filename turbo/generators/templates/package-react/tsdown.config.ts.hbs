@@ -1,0 +1,12 @@
+import { defineConfig } from "tsdown";
+
+export default defineConfig({
+  entry: ["src/**/*.{ts,tsx}"],
+  format: ["esm"],
+  platform: "neutral",
+  outDir: "dist",
+  dts: true,
+  unbundle: true,
+  clean: true,
+  external: ["react", "react-dom", "react/jsx-runtime"],
+});
