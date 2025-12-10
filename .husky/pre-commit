@@ -2,8 +2,9 @@
 
 # Format staged files with Prettier
 pnpm exec lint-staged
-# Lint workspace (via Turbo pipeline)
-pnpm lint --output-logs=none
 
-# typecheck workspace (via Turbo pipeline)
-pnpm typecheck --output-logs=none
+# Lint only packages with uncommitted changes (via Turbo filter)
+pnpm lint --filter="...[HEAD]" --output-logs=errors-only
+
+# Typecheck only packages with uncommitted changes (via Turbo filter)
+pnpm typecheck --filter="...[HEAD]" --output-logs=errors-only

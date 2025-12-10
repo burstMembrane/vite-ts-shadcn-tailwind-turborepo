@@ -1,11 +1,10 @@
 #!/usr/bin/env sh
 
-# Type-check entire workspace
-pnpm typecheck --output-logs=none
+# Typecheck packages changed since main branch
+pnpm typecheck --filter="...[origin/main]" --output-logs=errors-only
 
 # Check for unused dependencies and exports
 pnpm knip
 
-# Build shared packages
-pnpm build --filter @repo/lib
-pnpm build --filter @repo/ui
+# Build only changed shared packages (with their dependencies)
+pnpm build --filter="@repo/lib...[origin/main]" --filter="@repo/ui...[origin/main]" --output-logs=errors-only
