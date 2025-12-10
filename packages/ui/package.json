@@ -29,7 +29,8 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --max-warnings 0",
     "generate:barrels": "barrelsby --config .barrelsby.json",
-    "postshadcn": "tsx ./scripts/postshadcn.ts"
+    "postshadcn": "tsx ./scripts/postshadcn.ts",
+    "shadcn:add": "sh -c 'pnpm dlx shadcn@latest add \"$@\" && pnpm tsx scripts/fix-shadcn-imports.ts' --"
   },
   "peerDependencies": {
     "react": "^19.2.0"
