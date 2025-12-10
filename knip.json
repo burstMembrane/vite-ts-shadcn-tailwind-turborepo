@@ -5,7 +5,11 @@
     "apps/web": {
       "ignoreDependencies": ["@tailwindcss/vite", "lucide-react", "tailwindcss"]
     },
-    "packages/ui/": {
+    "packages/ui": {
+      "entry": ["src/components/**/*.tsx", "src/lib/**/*.ts", "src/hooks/**/*.ts"],
+      "paths": {
+        "dist/**/*.js": ["src/**/*.{ts,tsx}"]
+      },
       "ignoreDependencies": [
         "lucide-react",
         "@radix-ui/react-slot",
@@ -13,8 +17,28 @@
         "clsx",
         "tailwind-merge",
         "tw-animate-css",
-        "@radix-ui/react-dropdown-menu"
+        "@radix-ui/react-dropdown-menu",
+        "@repo/eslint-config",
+        "@repo/typescript-config",
+        "@tailwindcss/postcss",
+        "@types/react",
+        "@types/react-dom",
+        "glob",
+        "postcss-cli",
+        "postcss-load-config",
+        "tailwindcss"
       ]
+    },
+    "packages/eslint-config": {
+      "ignoreDependencies": [
+        "@typescript-eslint/eslint-plugin",
+        "@typescript-eslint/parser",
+        "eslint-config-turbo",
+        "eslint-plugin-only-warn"
+      ]
+    },
+    ".": {
+      "ignoreDependencies": ["@turbo/gen", "eslint-config-prettier"]
     }
   }
 }
