@@ -6,3 +6,5 @@ dist-ssr
 .turbo
 .specify
 turborepo-inspiration
+.tsbuildinfo
+*.tsbuildinfo
