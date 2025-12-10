@@ -4,7 +4,7 @@ import { add } from "@repo/shared";
 import { useEffect } from "react";
 import { ModeToggle } from "@repo/ui/components/mode-toggle";
 
-function App() {
+export function App() {
   useEffect(() => {
     console.log("2 + 3 =", add(2, 3));
   }, []);
@@ -21,4 +21,3 @@ function App() {
     </>
   );
 }
-export default App;

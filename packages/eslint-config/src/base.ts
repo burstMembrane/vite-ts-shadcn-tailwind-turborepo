@@ -53,6 +53,13 @@ export const baseConfig = defineConfig(
       "import/no-default-export": "off",
     },
   },
+  // Allow default exports in TypeScript declaration files (ambient module declarations)
+  {
+    files: ["**/*.d.ts"],
+    rules: {
+      "import/no-default-export": "off",
+    },
+  },
   // Disable ESLint rules that conflict with Prettier (must be last)
   prettierConfig
 );

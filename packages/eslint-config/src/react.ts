@@ -26,9 +26,6 @@ export const reactConfig = defineConfig(
       "react/react-in-jsx-scope": "off",
       "react/prop-types": "off",
       "jsx-a11y/anchor-is-valid": "off",
-
-      // Allow default exports in React files (for components and config files)
-      "import/no-default-export": "off",
     },
-  },
+  }
 );
