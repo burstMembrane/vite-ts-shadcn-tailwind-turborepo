@@ -1,11 +1,17 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "../../packages/typescript-config/react-library.json",
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "types": [],
     "allowSyntheticDefaultImports": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "tsBuildInfoFile": ".tsbuildinfo"
   },
-  "include": ["src"]
+  "include": ["src"],
+  "references": [
+    { "path": "../../packages/lib" },
+    { "path": "../../packages/shared" },
+    { "path": "../../packages/ui" }
+  ]
 }
