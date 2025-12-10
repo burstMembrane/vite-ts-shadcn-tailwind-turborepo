@@ -3,11 +3,12 @@ import { baseConfig } from "./base.ts";
 import pluginReact from "eslint-plugin-react";
 import pluginJsxA11y from "eslint-plugin-jsx-a11y";
 import globals from "globals";
-
+import reactHooks from "eslint-plugin-react-hooks";
 export const reactConfig = defineConfig(
   ...baseConfig,
   pluginReact.configs.flat.recommended,
   pluginJsxA11y.flatConfigs.recommended,
+  reactHooks.configs.flat.recommended,
 
   {
     languageOptions: {
