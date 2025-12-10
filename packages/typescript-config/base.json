@@ -3,6 +3,7 @@
   "display": "Base",
   "compilerOptions": {
     "composite": false,
+    "incremental": false,
     "declaration": true,
     "declarationMap": true,
     "esModuleInterop": true,
@@ -11,8 +12,8 @@
     "isolatedModules": true,
     "moduleResolution": "bundler",
     "module": "ESNext",
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "preserveWatchOutput": true,
     "skipLibCheck": true,
     "strict": true,

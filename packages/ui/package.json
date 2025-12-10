@@ -5,16 +5,25 @@
   "type": "module",
   "exports": {
     "./styles": "./dist/styles.css",
-    "./lib/*": "./src/lib/*.ts",
-    "./components/*": "./src/components/*.tsx",
-    "./hooks/*": "./src/hooks/*.ts"
+    "./lib/*": {
+      "types": "./dist/lib/*.d.ts",
+      "default": "./dist/lib/*.js"
+    },
+    "./components/*": {
+      "types": "./dist/components/*.d.ts",
+      "default": "./dist/components/*.js"
+    },
+    "./hooks/*": {
+      "types": "./dist/hooks/*.d.ts",
+      "default": "./dist/hooks/*.js"
+    }
   },
   "scripts": {
-    "dev": "postcss ./src/styles/globals.css -o ./dist/styles.css --watch --verbose",
-    "typecheck": "tsc --noEmit",
-    "lint": "eslint . --max-warnings 0",
+    "dev": "pnpm run build:css --watch",
+    "build": "vite build && tsc --emitDeclarationOnly --outDir dist && pnpm run build:css",
     "build:css": "postcss ./src/styles/globals.css -o ./dist/styles.css --verbose",
-    "build": "pnpm run build:css && tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --max-warnings 0"
   },
   "peerDependencies": {
     "react": "^19.2.0"
@@ -36,9 +45,11 @@
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",
     "eslint": "^9.18.0",
+    "glob": "^13.0.0",
     "postcss-cli": "^11.0.1",
     "postcss-load-config": "^6.0.1",
     "tailwindcss": "^4.1.11",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "vite": "^7.2.7"
   }
 }
