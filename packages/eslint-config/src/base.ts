@@ -8,14 +8,36 @@ import prettierConfig from "eslint-config-prettier";
 export const baseConfig = defineConfig(
   // Global ignores must be in their own config object
   {
-    ignores: ["**/node_modules/**", "**/dist/**", "**/.turbo/**", "**/.next/**", "**/build/**"],
+    ignores: [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/.turbo/**",
+      "**/.next/**",
+      "**/build/**",
+      "**/*.config.{js,ts,mjs,mts,cjs,cts}",
+      "**/eslint.config.{js,ts,mjs,mts,cjs,cts}",
+    ],
   },
   js.configs.recommended,
-  ...tseslint.configs.recommended,
+  ...tseslint.configs.recommendedTypeChecked,
   {
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
     plugins: {
       import: importPlugin,
       unicorn: unicornPlugin,
+    },
+    settings: {
+      "import/resolver": {
+        typescript: {
+          alwaysTryTypes: true,
+          projectService: true,
+        },
+      },
     },
     rules: {
       // TypeScript strict rules
@@ -46,19 +68,17 @@ export const baseConfig = defineConfig(
       "@typescript-eslint/no-namespace": "off",
     },
   },
-  // Allow default exports in config files
-  {
-    files: ["**/*.config.{js,ts,mjs,mts,cjs,cts}"],
-    rules: {
-      "import/no-default-export": "off",
-    },
-  },
   // Allow default exports in TypeScript declaration files (ambient module declarations)
   {
     files: ["**/*.d.ts"],
     rules: {
       "import/no-default-export": "off",
     },
+  },
+  // Disable type-aware rules for JavaScript files
+  {
+    files: ["**/*.js", "**/*.mjs", "**/*.cjs"],
+    ...tseslint.configs.disableTypeChecked[0],
   },
   // Disable ESLint rules that conflict with Prettier (must be last)
   prettierConfig
