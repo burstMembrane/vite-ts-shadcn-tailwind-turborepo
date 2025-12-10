@@ -52,7 +52,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
     const pkgName = (answers as Record<string, string>).packageName;
     const filePath = "apps/web/vite.config.ts";
     const aliasKey = `"@repo/${pkgName}"`;
-    const aliasValue = `path.resolve(__dirname, "../../packages/${pkgName}/src")`;
+    const aliasValue = `path.resolve(__dirname, "../../packages/${pkgName}/dist")`;
 
     let content = fs.readFileSync(filePath, "utf8");
 
