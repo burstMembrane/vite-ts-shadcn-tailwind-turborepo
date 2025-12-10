@@ -23,8 +23,8 @@
     }
   },
   "scripts": {
-    "dev": "pnpm run build:css --watch",
-    "build": "pnpm run generate:barrels && tsdown && pnpm run build:css",
+    "dev": "concurrently --prefix-colors \"blue,green\" \"pnpm run build:css --watch\" \"tsdown --log-level error --watch\"",
+    "build": "pnpm run generate:barrels && tsdown --log-level error && pnpm run build:css",
     "build:css": "postcss ./src/styles/globals.css -o ./dist/styles.css --verbose",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --max-warnings 0",
@@ -52,6 +52,7 @@
     "@types/node": "^20.19.9",
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",
+    "concurrently": "^9.2.1",
     "eslint": "^9.18.0",
     "jscodeshift": "^17.3.0",
     "postcss-cli": "^11.0.1",
