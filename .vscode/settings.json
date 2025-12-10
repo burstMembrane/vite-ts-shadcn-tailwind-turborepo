@@ -10,5 +10,8 @@
     "files.autoSave": "onFocusChange", 
     "vs-code-prettier-eslint.prettierLast": false,
     "prettier.requireConfig": true,
+    "gotoSymbolStack.currentStackPosition": 0,
+    "gotoSymbolStack.maxStackPosition": 0,
+    "gotoSymbolStack.filePositionInfo": [],
     
 }

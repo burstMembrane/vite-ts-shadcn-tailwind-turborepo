@@ -77,8 +77,8 @@ export const baseConfig = defineConfig(
   },
   // Disable type-aware rules for JavaScript files
   {
+    ...tseslint.configs.disableTypeChecked,
     files: ["**/*.js", "**/*.mjs", "**/*.cjs"],
-    ...tseslint.configs.disableTypeChecked[0],
   },
   // Disable ESLint rules that conflict with Prettier (must be last)
   prettierConfig

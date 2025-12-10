@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { Button } from "@repo/ui/components/button";
+import { Button } from "@repo/ui";
 import { userSchema } from "@repo/lib/schemas";
 
 /**

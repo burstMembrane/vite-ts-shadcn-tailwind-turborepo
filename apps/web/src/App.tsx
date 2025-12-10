@@ -1,8 +1,8 @@
-import { Button } from "@repo/ui/components/button";
+import { Button } from "@repo/ui";
 import { ZodExample } from "./components/ZodExample";
 import { add } from "@repo/shared";
 import { useEffect } from "react";
-import { ModeToggle } from "@repo/ui/components/mode-toggle";
+import { ModeToggle } from "@repo/ui";
 
 export function App() {
   useEffect(() => {
