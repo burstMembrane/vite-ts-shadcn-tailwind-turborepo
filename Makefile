@@ -27,3 +27,6 @@ pre-commit:
 
 pre-push:
 	.husky/pre-push
+
+shadcn-add:
+	pnpm --filter @repo/ui shadcn:add 
