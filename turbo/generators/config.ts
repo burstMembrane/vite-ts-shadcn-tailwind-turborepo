@@ -157,7 +157,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
       actions.push({
         type: "message",
         data: `
-✅ Package @repo/{{ packageName }} created successfully!
+ Package @repo/{{ packageName }} created successfully!
 
 Next steps:
   1. Run 'pnpm install' to link the new package
@@ -210,7 +210,7 @@ Next steps:
       actions.push({
         type: "message",
         data: `
-✅ App {{ appName }} created successfully!
+ App {{ appName }} created successfully!
 
 Next steps:
   1. Run 'pnpm install' to install dependencies
